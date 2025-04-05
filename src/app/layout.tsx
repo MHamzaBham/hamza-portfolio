@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/sidebar/Sidebar";
+import { RxHamburgerMenu } from "react-icons/rx";
+import HamburgerMenuButton from "./ui/HamburgerMenuButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex">
+          <Sidebar />
+            <main
+            className="flex-1 p-4 bg-cover bg-center min-h-screen"
+            // style={{ backgroundImage: "url('/assets/bg.jpg')" }}
+            >
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );
