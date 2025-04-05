@@ -22,7 +22,7 @@ export function Ticker() {
       {[...Array(10)].map((_, index) => (
         <img
           key={index}
-          src="/assets/full_name.png"
+          src={`${process.env.NODE_ENV === 'production' ? '/hamza-portfolio' : ''}/assets/full_name.png`}
           className="w-auto h-25 mx-4"
           alt="Hamza Ahmed"
         />
@@ -101,7 +101,7 @@ export function ScrollDownArrow() {
       onClick={handleScroll}
     >
       <motion.img
-        src="/assets/arrow.svg"
+        src={`${process.env.NODE_ENV === 'production' ? '/hamza-portfolio' : ''}/assets/arrow.svg`}
         alt="Scroll Down"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 , transition: { duration: 2, repeat: Infinity, repeatType: "reverse" } }}

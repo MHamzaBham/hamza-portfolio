@@ -30,7 +30,7 @@ export default function Project({ project }: ProjectProps) {
           </a>
         </div>
         <Image
-          src={project.image}
+          src={`${process.env.NODE_ENV === 'production' ? '/hamza-portfolio' : ''}${project.image}`}
           alt={project.name}
           width={400}
           height={400}
