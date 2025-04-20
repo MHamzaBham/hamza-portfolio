@@ -1,30 +1,7 @@
+import { experiences } from "@/constants";
 import Experience from "./Experience";
 
 import { ArrowBigDown, ArrowDown } from "lucide-react";
-
-const experiences = [
-  {
-    name: "Spectriv",
-    role: "Software Engineer Intern",
-    description:
-      "Built full-stack apps with Django, DRF, React.js, and Next.js for seamless APIs and performance.",
-    icon: ArrowBigDown,
-  },
-  {
-    name: "Ibexoft technologies",
-    role: "IT Apprentice",
-    description:
-      "Developed full-stack apps with Laravel and React.js, ensuring seamless integration and high performance in Agile teams.",
-    icon: ArrowBigDown,
-  },
-  {
-    name: "Intrazix",
-    role: "Web Developer",
-    description:
-      "Built intuitive UIs with HTML, CSS, JavaScript, and developed secure back-ends with Node.js, Express.js, and MongoDB.",
-    icon: ArrowBigDown,
-  },
-];
 
 export default function List() {
   return (

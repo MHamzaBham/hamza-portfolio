@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
-import { RxHamburgerMenu } from "react-icons/rx";
-import HamburgerMenuButton from "./ui/HamburgerMenuButton";
+import { FiMessageCircle } from "react-icons/fi";
+
+import "@fontsource/poppins";
+import { FaRegUser } from "react-icons/fa";
+import { BsStars } from "react-icons/bs";
+import { Chatbot } from "./ui/chat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,14 +36,19 @@ export default function RootLayout({
       >
         <div className="flex">
           <Sidebar />
-            <main
+          <main
             className="flex-1 p-4 bg-cover bg-center min-h-screen"
-            // style={{ backgroundImage: "url('/assets/bg.jpg')" }}
-            >
+          // style={{ backgroundImage: "url('/assets/bg.jpg')" }}
+          >
             {children}
           </main>
+        </div>
+
+        <div className="font-[poppins]">
+          <Chatbot />
         </div>
       </body>
     </html>
   );
 }
+
