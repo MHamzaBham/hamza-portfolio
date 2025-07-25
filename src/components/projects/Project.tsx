@@ -16,7 +16,7 @@ type ProjectProps = {
 export default function Project({ project }: ProjectProps) {
   return (
     <>
-      <div className="group hover:shadow-sm flex flex-col md:flex-row gap-10 mb-10 lg:mb-5 justify-between shadow-white/5 px-10 py-5 transition-all duration-300 rounded-xl cursor-pointer border-l-2 lg:border-transparent hover:border-indigo-300 border-indigo-300 shadow-md">
+      <div className="group hover:shadow-sm flex flex-col md:flex-row gap-10 mb-10 lg:mb-5 justify-between shadow-white/5 md:px-10 px-6 py-5 transition-all duration-300 rounded-xl cursor-pointer border-l-2 lg:border-transparent hover:border-indigo-300 border-indigo-300 shadow-md">
         <div>
           <h2 className="mb-6 text-lg font-[poppins]">{project.name}</h2>
           <p className="text-gray-400 text-md">

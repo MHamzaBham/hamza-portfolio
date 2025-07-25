@@ -10,6 +10,7 @@ type Experience = {
     description: string;
     icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     logo: string;
+    tenure: string;
 };
 
 type ExperienceProps = {
@@ -36,7 +37,7 @@ const Experience: React.FC<ExperienceProps> = ({ experience, index, experienceLe
                     <div>
                     <h2 className="text-lg font-[poppins]">{experience.role}</h2>
                     <h4 className="text-xs font-[poppins] text-gray-500 font-extralight tracking-tight">
-                        MAR 2022 - OCT 2022
+                        {experience.tenure}
                     </h4>
                     </div>
                 </dt>

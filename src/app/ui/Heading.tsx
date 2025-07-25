@@ -24,7 +24,7 @@ export default function Heading({
           <a href={link}>
             <button
               type="button"
-              className="group cursor-pointer py-2.5 px-5 me-2 text-xs font-medium  focus:outline-none rounded-lg  focus:z-10  bg-black/5 dark:bg-white/10 text-gray-300 shadow-gray-600 shadow-sm hover:text-white hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"
+              className="group cursor-pointer md:py-2.5 py-2 md:px-5 px-3 md:text-xs text-[10px] font-medium  focus:outline-none rounded-lg  focus:z-10  bg-black/5 dark:bg-white/10 text-gray-300 shadow-gray-600 shadow-sm hover:text-white hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"
             >
               {button}
               <CiLocationArrow1 className="transition-transform duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />

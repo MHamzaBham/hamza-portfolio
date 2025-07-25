@@ -63,12 +63,12 @@ export default function Article({ article }: { article: BentoItem }) {
               </span>
             ))}
           </div>
-          <a href="#">
+        </div>
+          <a href="#" className="mt-2 text-end w-full">
             <span className="text-xs text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
               Read more →
             </span>
           </a>
-        </div>
       </div>
 
       <div

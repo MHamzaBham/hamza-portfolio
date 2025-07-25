@@ -36,11 +36,12 @@ export const projects = [
 export const experiences = [
   {
     name: "Spectriv",
-    role: "Software Engineer Intern",
+    role: "Jr. Software Engineer",
     description:
       "Built full-stack apps with Django, DRF, React.js, and Next.js for seamless APIs and performance.",
     icon: ArrowBigDown,
-    logo: "/assets/spectriv.png"
+    logo: "/assets/spectriv.png",
+    tenure: "MAR 2022 - OCT 2022"
   },
   {
     name: "Ibexoft technologies",
@@ -48,7 +49,8 @@ export const experiences = [
     description:
       "Developed full-stack apps with Laravel and React.js, ensuring seamless integration and high performance in Agile teams.",
     icon: ArrowBigDown,
-    logo: "/assets/ibexoft_logo.png"
+    logo: "/assets/ibexoft_logo.png",
+    tenure: "MAR 2022 - OCT 2022"
   },
   {
     name: "Intrazix",
@@ -56,7 +58,8 @@ export const experiences = [
     description:
       "Built intuitive UIs with HTML, CSS, JavaScript, and developed secure back-ends with Node.js, Express.js, and MongoDB.",
     icon: ArrowBigDown,
-    logo: "/assets/intrazix_logo.png"
+    logo: "/assets/intrazix_logo.png",
+    tenure: "MAR 2022 - OCT 2022"
   },
 ];
 

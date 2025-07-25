@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import "@fontsource/poppins";
 import { CiLocationArrow1 } from "react-icons/ci";
 
+const Linkedin = "https://www.linkedin.com/in/hamzabham/"
+
 export default function Text() {
   return (
-    <div className="mt-20">
-      <Heading />
-    </div>
+    <Heading />
   );
 }
 
@@ -60,7 +60,7 @@ function Intro() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="text-lg font-light mt-2"
+      className="md:text-lg text-sm font-light mt-2"
     >
       I specialize in building fast, dynamic, and scalable
       web applications using modern technologies like <i>React</i>,{" "}
@@ -75,7 +75,7 @@ function Intro() {
 
 function LetsConnect() {
   return (
-    <a href="#">
+    <a href={Linkedin} target="_blank">
       <button
         type="button"
         className="group cursor-pointer mt-4 py-2.5 px-5 me-2 mb-2 text-xs font-medium  focus:outline-none rounded-lg border  focus:z-10  bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"

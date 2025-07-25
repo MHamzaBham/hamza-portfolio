@@ -11,7 +11,7 @@ export default function Contact() {
 function Form() {
   return (
     <div className="lg:mx-6">
-      <div className="px-8 py-10 overflow-hidden rounded-2xl bg-black/50">
+      <div className="md:px-8 px-4 py-10 overflow-hidden rounded-2xl bg-black/50">
         <h1 className="text-lg font-medium text-gray-200">
           Say hello 👋
         </h1>

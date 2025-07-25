@@ -13,7 +13,7 @@ export default function HamburgerMenuButton({ isOpen, setIsOpen }: HamburgerMenu
     }
 
     return (
-        <div className={`flex w-16  ${isOpen ? "" : "fixed"} z-10 lg:hidden block`}>
+        <div className={`flex w-16  ${isOpen ? "" : "absolute"} z-10 lg:hidden block`}>
             <button
                 className="cursor-pointer m-auto mt-4"
                 onClick={handleClick}
