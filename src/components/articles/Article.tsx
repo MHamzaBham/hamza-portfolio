@@ -1,29 +1,20 @@
 import { cn } from "@/lib/utils";
-import { BentoItem } from "@/constants/articles";
+import type { Article } from "@/constants/articles";
+import Link from "next/link";
 
-export default function Article({ article }: { article: BentoItem }) {
+export default function Article({ article }: { article: Article }) {
   return (
-    <div
+    <Link href={`/articles/${article.slug}`}
       className={cn(
         "group relative p-4 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer",
         "border border-gray-100/80 dark:border-white/10 bg-white dark:bg-black",
         "hover:shadow-[0_2px_12px_rgba(0,0,0,0.03)] dark:hover:shadow-[0_2px_12px_rgba(255,255,255,0.03)]",
         "hover:-translate-y-0.5 will-change-transform",
         "md:col-span-1 col-span-1",
-        {
-          "shadow-[0_2px_12px_rgba(0,0,0,0.03)] -translate-y-0.5":
-            article.hasPersistentHover,
-          "dark:shadow-[0_2px_12px_rgba(255,255,255,0.03)]":
-            article.hasPersistentHover,
-        }
       )}
     >
       <div
-        className={`absolute inset-0 ${
-          article.hasPersistentHover
-            ? "opacity-100"
-            : "opacity-0 group-hover:opacity-100"
-        } transition-opacity duration-300`}
+        className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[length:4px_4px]" />
       </div>
@@ -39,7 +30,7 @@ export default function Article({ article }: { article: BentoItem }) {
               "bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300"
             )}
           >
-            {article.status || "Active"}
+            {article.published || "NA"}
           </span>
         </div>
 
@@ -48,7 +39,7 @@ export default function Article({ article }: { article: BentoItem }) {
             {article.title}
           </h3>
           <p className="text-sm text-gray-600 dark:text-gray-300 leading-snug font-[425]">
-            {article.description} {`...`}
+            {article.excerpt} {`...`}
           </p>
         </div>
 
@@ -64,20 +55,16 @@ export default function Article({ article }: { article: BentoItem }) {
             ))}
           </div>
         </div>
-          <a href="#" className="mt-2 text-end w-full">
+          <Link href={`/articles/${article.slug}`} className="mt-2 text-end w-full">
             <span className="text-xs text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
               Read more →
             </span>
-          </a>
+          </Link>
       </div>
 
       <div
-        className={`absolute inset-0 -z-10 rounded-xl p-px bg-linear-to-br from-transparent via-gray-100/50 to-transparent dark:via-white/10 ${
-          article.hasPersistentHover
-            ? "opacity-100"
-            : "opacity-0 group-hover:opacity-100"
-        } transition-opacity duration-300`}
+        className="absolute inset-0 -z-10 rounded-xl p-px bg-linear-to-br from-transparent via-gray-100/50 to-transparent dark:via-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       />
-    </div>
+    </Link>
   );
 }

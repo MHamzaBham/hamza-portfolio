@@ -1,37 +1,7 @@
-import { ArrowBigDown } from "lucide-react";
-import { FaBootstrap, FaCss3Alt, FaHtml5, FaReact } from "react-icons/fa";
-import { FaNodeJs, FaSquareJs } from "react-icons/fa6";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiMysql } from "react-icons/si";
+  import { ArrowBigDown } from "lucide-react";
+import { projects } from "./constants/projects";
 
 export const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
-
-export const projects = [
-  {
-    name: "Quiks",
-    description: "A web application designed for reading and listening to shortbooks, perfect for those who enjoy learning on the go. It features a personalized dashboard, intuitive navigation, and a clean, engaging interface that makes discovering and consuming content quick and enjoyable.",
-    image: "/assets/quiks.png",
-    techIcons: [SiMysql, FaReact, FaNodeJs, RiTailwindCssFill]
-  },
-  {
-    name: "Spendara",
-    description: "An expense management application built for both individuals and enterprises to keep track of their finances effortlessly. It offers detailed reports, spending insights, and organized data to help users understand their financial habits and make informed decisions for a better financial future.",
-    image: "/assets/spendara.jpg",
-    techIcons: [FaHtml5, FaCss3Alt, FaSquareJs, FaBootstrap]
-  },
-  {
-    name: "Ibexoft",
-    description: "A company website created to highlight services, showcase completed projects, and reflect the brand’s identity with a clean and modern design. Built with a focus on user experience, it helps the software company establish a strong online presence, attract potential clients, and expand its reach in a competitive market.",
-    image: "/assets/ibexoft.webp",
-    techIcons: [FaHtml5, FaCss3Alt, FaSquareJs, FaBootstrap]
-  },
-  {
-    name: "eClerx Digital",
-    description: "A landing page for a company that specializes in digital transformation and data analytics. The page is designed to be visually appealing, user-friendly, and informative, showcasing the company's services and expertise in the digital space.",
-    image: "/assets/eclerx.jpg",
-    techIcons: [RiNextjsFill, RiTailwindCssFill, FaSquareJs]
-  }
-];
 
 export const experiences = [
   {

@@ -1,12 +1,11 @@
 import Image from "next/image";
 import "@fontsource/poppins";
-import { CiLocationArrow1 } from "react-icons/ci";
-import { FaReact } from "react-icons/fa";
-import { SiMysql } from "react-icons/si";
+import Link from "next/link";
 
 type ProjectProps = {
   project: {
     name: string;
+    slug: string;
     description: string;
     image: string;
     techIcons: Array<React.ElementType>;
@@ -15,7 +14,7 @@ type ProjectProps = {
 
 export default function Project({ project }: ProjectProps) {
   return (
-    <>
+    <Link href={`/projects/${project.slug}`}>
       <div className="group hover:shadow-sm flex flex-col md:flex-row gap-10 mb-10 lg:mb-5 justify-between shadow-white/5 md:px-10 px-6 py-5 transition-all duration-300 rounded-xl cursor-pointer border-l-2 lg:border-transparent hover:border-indigo-300 border-indigo-300 shadow-md">
         <div>
           <h2 className="mb-6 text-lg font-[poppins]">{project.name}</h2>
@@ -46,7 +45,7 @@ export default function Project({ project }: ProjectProps) {
           className="rounded-xl opacity-90"
         />
       </div>
-    </>
+    </Link>
   );
 }
 

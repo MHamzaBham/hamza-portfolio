@@ -1,6 +1,6 @@
 "use client";
 
-import { projects } from "@/constants";
+import { projects } from "@/constants/projects";
 import Project from "./Project";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
