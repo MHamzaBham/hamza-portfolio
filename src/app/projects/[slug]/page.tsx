@@ -201,3 +201,10 @@ const CTA = ({ project }: { project: any }) => {
     </motion.div>
   );
 };
+
+
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
