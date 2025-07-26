@@ -1,15 +1,5 @@
 import { ArticleAuthor, articles } from "@/constants/articles";
-import {
-  UserPlus,
-  Twitter,
-  Heart,
-  MessageCircle,
-  Share2,
-  Link2,
-  Facebook,
-  Linkedin,
-  X,
-} from "lucide-react";
+import { Heart, MessageCircle, Share2 } from "lucide-react";
 import { FaRegLightbulb } from "react-icons/fa";
 
 export default function Article({ params }: { params: { slug: string } }) {
