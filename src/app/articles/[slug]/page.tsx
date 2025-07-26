@@ -2,6 +2,12 @@ import { ArticleAuthor, articles } from "@/constants/articles";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 import { FaRegLightbulb } from "react-icons/fa";
 
+export function generateStaticParams() {
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
 export default function Article({ params }: { params: { slug: string } }) {
   const article = articles.find((article) => article.slug === params.slug);
 
@@ -190,9 +196,3 @@ const StickyButtons = () => {
     </div>
   );
 };
-
-export async function generateStaticParams() {
-  return articles.map((article) => ({
-    slug: article.slug,
-  }));
-}

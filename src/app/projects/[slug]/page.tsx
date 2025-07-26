@@ -4,6 +4,13 @@ import "@fontsource/poppins";
 import { projects } from "@/constants/projects";
 import { TechIcon } from "@/components/projects/Project";
 
+export function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug);
 
@@ -200,10 +207,3 @@ const CTA = ({ project }: { project: any }) => {
     </motion.div>
   );
 };
-
-
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
-}
