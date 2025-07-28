@@ -5,16 +5,14 @@ import { notFound } from "next/navigation";
 import axios from "axios";
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 export default async function Article({ params }: Props) {
-  const awaitedParams = await params;
-  if (!awaitedParams?.slug) return notFound();
+  if (!params?.slug) return notFound();
 
-  const slug = awaitedParams.slug;
   const article = await axios
-    .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
+    .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${params.slug}`)
     .then((res) => res.data);
   if (!article) return notFound();
 
