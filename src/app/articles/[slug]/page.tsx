@@ -9,11 +9,11 @@ interface Props {
 }
 
 export default async function Article({ params }: Props) {
-  const awaitedParams = await params;
-  if (!awaitedParams?.slug) return notFound();
+  const { slug } = await params;
+  if (!slug) return notFound();
 
   const article = await axios
-    .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${awaitedParams.slug}`)
+    .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
     .then((res) => res.data);
   if (!article) return notFound();
 
