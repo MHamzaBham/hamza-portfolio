@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.2.5",
+    "axios": "^1.11.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.11",
     "lucide-react": "^0.483.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.16.5",
     "next": "15.2.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

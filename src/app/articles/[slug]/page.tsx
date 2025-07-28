@@ -1,23 +1,31 @@
-import { ArticleAuthor, articles } from "@/constants/articles";
+import { AuthorType } from "@/constants/articles";
 import { Heart, MessageCircle, Share2 } from "lucide-react";
 import { FaRegLightbulb } from "react-icons/fa";
+import { notFound } from "next/navigation";
+import axios from "axios";
 
-export function generateStaticParams() {
-  return articles.map((article) => ({
-    slug: article.slug,
-  }));
+interface Props {
+  params: Promise<{ slug: string }>;
 }
 
-export default function Article({ params }: { params: { slug: string } }) {
-  const article = articles.find((article) => article.slug === params.slug);
+export default async function Article({ params }: Props) {
+  const awaitedParams = await params;
+  if (!awaitedParams?.slug) return notFound();
+
+  const slug = awaitedParams.slug;
+  const article = await axios
+    .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
+    .then((res) => res.data);
+  if (!article) return notFound();
+
+  const author = await axios
+    .get(`${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`)
+    .then((res) => res.data);
 
   return (
     <>
       <div className="max-w-4xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto font-[poppins]">
-        <AuthorSection
-          author={article?.author || { name: "", avatar: "" }}
-          published={article?.published || ""}
-        />
+        <AuthorSection author={author} published={article?.published || ""} />
 
         <div className="space-y-5 md:space-y-8">
           <div className="space-y-3">
@@ -41,7 +49,7 @@ export default function Article({ params }: { params: { slug: string } }) {
               alt={article?.title}
             />
             <figcaption className="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">
-              {article?.media[0].alt}
+              {article?.featured_video}
             </figcaption>
           </figure>
 
@@ -54,7 +62,7 @@ export default function Article({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <StickyButtons />
+      {/* <StickyButtons /> */}
     </>
   );
 }
@@ -63,7 +71,7 @@ const AuthorSection = ({
   author,
   published,
 }: {
-  author: ArticleAuthor;
+  author: AuthorType;
   published: string;
 }) => {
   return (
@@ -121,6 +129,7 @@ const Tags = ({ tags }: { tags: string[] }) => {
     <div>
       {tags.map((tag) => (
         <a
+          key={tag}
           className="m-1 inline-flex items-center gap-1.5 py-2 px-3 rounded-full text-xs bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
           href="#"
         >

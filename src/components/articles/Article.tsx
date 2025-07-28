@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
-import type { Article } from "@/constants/articles";
+import type { ArticleType } from "@/constants/articles";
 import Link from "next/link";
 
-export default function Article({ article }: { article: Article }) {
+export default function Article({ article }: { article: ArticleType }) {
   return (
-    <Link href={`/articles/${article.slug}`}
+    <Link href={`/articles/${article._id}`}
       className={cn(
         "group relative p-4 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer",
         "border border-gray-100/80 dark:border-white/10 bg-white dark:bg-black",
@@ -22,7 +22,7 @@ export default function Article({ article }: { article: Article }) {
       <div className="relative flex flex-col h-full">
         <div className="flex items-center justify-between">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-black/5 dark:bg-white/10 group-hover:bg-linear-to-br transition-all duration-300">
-            {article.icon}
+            {/* {article.icon} */}
           </div>
           <span
             className={cn(
