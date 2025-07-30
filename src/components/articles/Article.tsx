@@ -55,11 +55,9 @@ export default function Article({ article }: { article: ArticleType }) {
             ))}
           </div>
         </div>
-          <Link href={`/articles/${article.slug}`} className="mt-2 text-end w-full">
             <span className="text-xs text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
               Read more →
             </span>
-          </Link>
       </div>
 
       <div

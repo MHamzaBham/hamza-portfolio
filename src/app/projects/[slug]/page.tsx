@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
 import { CiLocationArrow1 } from "react-icons/ci";
-import "@fontsource/poppins";
 import { projects } from "@/constants/projects";
 import { TechIcon } from "@/components/projects/Project";
 
@@ -19,12 +17,7 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <div className="my-20 max-w-4xl mx-auto font-[poppins]">
       {/* Cover Image */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="rounded-3xl overflow-hidden shadow-2xl mb-10"
-      >
+      <div className="rounded-3xl overflow-hidden shadow-2xl mb-10">
         <img
           src={
             process.env.NODE_ENV === "production"
@@ -34,30 +27,20 @@ export default async function ProjectPage({ params }: Props) {
           alt={project.name}
           className="object-cover object-center transition-transform duration-500 hover:scale-105"
         />
-      </motion.div>
+      </div>
 
       {/* Title & Subtitle */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        className="mb-6"
-      >
+      <div className="mb-6">
         <h1 className="text-2xl md:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
           {project.name}
         </h1>
         <p className="text-gray-300 leading-relaxed mt-2">
           {project.description}
         </p>
-      </motion.div>
+      </div>
 
       {/* Action Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="flex gap-2 mb-10"
-      >
+      <div className="flex gap-2 mb-10">
         <a href={project.github} target="_blank">
           <button
             type="button"
@@ -76,7 +59,7 @@ export default async function ProjectPage({ params }: Props) {
             <CiLocationArrow1 className="transition-transform duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </button>
         </a>
-      </motion.div>
+      </div>
 
       <Technologies project={project} />
 
@@ -91,12 +74,7 @@ export default async function ProjectPage({ params }: Props) {
 
 const Technologies = ({ project }: { project: any }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.6 }}
-      className="mb-10"
-    >
+    <div className="mb-10">
       <h3 className="text-xl font-semibold mb-2 text-white/80">
         Technologies Used
       </h3>
@@ -105,24 +83,19 @@ const Technologies = ({ project }: { project: any }) => {
           <TechIcon key={index} Icon={tech} />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const KeyFeatures = ({ features }: { features: any[] }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.7 }}
-      className="mb-12"
-    >
+    <div className="mb-12">
       <div className="grid mt-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-lg mx-auto md:max-w-2xl lg:max-w-full">
         {features.map((feature, index) => (
           <KeyFeatureCard key={index} feature={feature} />
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -144,20 +117,11 @@ const KeyFeatureCard = ({ feature }: { feature: any }) => {
 
 const Gallery = ({ project }: { project: any }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.8 }}
-      className="mb-10"
-    >
+    <div className="mb-10">
       <h3 className="text-xl font-semibold mb-4 text-white/80">Gallery</h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {project.gallery.map((img: any, idx: number) => (
-          <motion.div
-            key={img}
-            whileHover={{ scale: 1.05 }}
-            className="rounded-xl overflow-hidden shadow-lg"
-          >
+          <div key={img} className="rounded-xl overflow-hidden shadow-lg">
             <img
               src={
                 process.env.NODE_ENV === "production"
@@ -167,21 +131,16 @@ const Gallery = ({ project }: { project: any }) => {
               alt={`Project screenshot ${idx + 1}`}
               className="w-full h-40 object-cover object-center transition-transform duration-300"
             />
-          </motion.div>
+          </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
 const CTA = ({ project }: { project: any }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.9 }}
-      className="flex flex-col items-center mt-16"
-    >
+    <div className="flex flex-col items-center mt-16">
       <a href={project.live}>
         <button
           type="button"
@@ -202,6 +161,6 @@ const CTA = ({ project }: { project: any }) => {
           GitHub
         </a>
       </p>
-    </motion.div>
+    </div>
   );
 };
