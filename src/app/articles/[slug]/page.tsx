@@ -8,6 +8,18 @@ interface Props {
   params: Promise<{ slug: string }>; // Use Promise for params
 }
 
+export async function generateStaticParams() {
+  try {
+    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/articles`);
+    const articles = res.data || [];
+    return articles.map((article: any) => ({
+      slug: article._id,
+    }));
+  } catch (error) {
+    return [];
+  }
+}
+
 export default async function Article({ params }: Props) {
   const { slug } = await params;
   if (!slug) return notFound();
