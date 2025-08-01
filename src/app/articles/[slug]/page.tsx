@@ -5,19 +5,12 @@ import { notFound } from "next/navigation";
 import axios from "axios";
 
 interface Props {
-  params: Promise<{ slug: string }>; // Use Promise for params
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  try {
-    const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/articles`);
-    const articles = res.data || [];
-    return articles.map((article: any) => ({
-      slug: article._id,
-    }));
-  } catch (error) {
-    return [];
-  }
+  const articles = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/articles`);
+  return articles.data.map((article: any) => ({ slug: article.slug }));
 }
 
 export default async function Article({ params }: Props) {
@@ -26,12 +19,21 @@ export default async function Article({ params }: Props) {
 
   const article = await axios
     .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
-    .then((res) => res.data);
-  if (!article) return notFound();
+    .then((res) => res.data)
+    .catch((err) => {
+      console.log(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
+      console.log(err);
+      notFound();
+    });
 
   const author = await axios
     .get(`${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`)
-    .then((res) => res.data);
+    .then((res) => res.data)
+    .catch((err) => {
+      console.log(`${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`)
+      console.log(err)
+      notFound()
+    });
 
   return (
     <>

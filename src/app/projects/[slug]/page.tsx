@@ -6,10 +6,8 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+export async function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }));
 }
 
 export default async function ProjectPage({ params }: Props) {
