@@ -4,6 +4,8 @@ import Experiences from "@/components/experience";
 import Text, { ScrollDownArrow, Ticker } from "@/components/hero/HighlightText";
 import Projects from "@/components/projects";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <div className="relative w-full overflow-hidden">
