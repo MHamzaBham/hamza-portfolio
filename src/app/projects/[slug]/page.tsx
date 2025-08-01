@@ -2,12 +2,10 @@ import { CiLocationArrow1 } from "react-icons/ci";
 import { projects } from "@/constants/projects";
 import { TechIcon } from "@/components/projects/Project";
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   params: Promise<{ slug: string }>;
-}
-
-export async function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
 }
 
 export default async function ProjectPage({ params }: Props) {
