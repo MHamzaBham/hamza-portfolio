@@ -4,24 +4,21 @@ import { FaRegLightbulb } from "react-icons/fa";
 import { notFound } from "next/navigation";
 import axios from "axios";
 
-interface Props {
-  params: Promise<{ slug: string }>;
-}
+export const dynamic = "force-dynamic";
 
-export async function generateStaticParams() {
-  const articles = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/articles`);
-  return articles.data.map((article: any) => ({ slug: article.slug }));
+interface Props {
+  params: { slug: string };
 }
 
 export default async function Article({ params }: Props) {
-  const { slug } = await params;
+  const { slug } = params;
   if (!slug) return notFound();
 
   const article = await axios
     .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
     .then((res) => res.data)
     .catch((err) => {
-      console.log(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
+      console.log(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`);
       console.log(err);
       notFound();
     });
@@ -30,9 +27,11 @@ export default async function Article({ params }: Props) {
     .get(`${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`)
     .then((res) => res.data)
     .catch((err) => {
-      console.log(`${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`)
-      console.log(err)
-      notFound()
+      console.log(
+        `${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`
+      );
+      console.log(err);
+      notFound();
     });
 
   return (
