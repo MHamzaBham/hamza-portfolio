@@ -21,11 +21,7 @@ export default async function ProjectPage({ params }: Props) {
       {/* Cover Image */}
       <div className="rounded-3xl overflow-hidden shadow-2xl mb-10">
         <img
-          src={
-            process.env.NODE_ENV === "production"
-              ? "/hamza-portfolio" + project.image
-              : project.image
-          }
+          src={project.image}
           alt={project.name}
           className="object-cover object-center transition-transform duration-500 hover:scale-105"
         />
@@ -125,11 +121,7 @@ const Gallery = ({ project }: { project: any }) => {
         {project.gallery.map((img: any, idx: number) => (
           <div key={img} className="rounded-xl overflow-hidden shadow-lg">
             <img
-              src={
-                process.env.NODE_ENV === "production"
-                  ? "/hamza-portfolio" + img
-                  : img
-              }
+              src={img}
               alt={`Project screenshot ${idx + 1}`}
               className="w-full h-40 object-cover object-center transition-transform duration-300"
             />

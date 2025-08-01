@@ -51,11 +51,7 @@ export default async function Article({ params }: Props) {
           <figure>
             <img
               className="w-full object-cover rounded-xl h-72"
-              src={
-                process.env.NODE_ENV === "production"
-                  ? "/hamza-portfolio" + article?.featured_image
-                  : article?.featured_image
-              }
+              src={article?.featured_image}
               alt={article?.title}
             />
             <figcaption className="mt-3 text-sm text-center text-gray-500 dark:text-neutral-500">

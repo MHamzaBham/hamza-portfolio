@@ -27,7 +27,7 @@ const Experience: React.FC<ExperienceProps> = ({ experience, index, experienceLe
                 <dt className="text-base/7 font-semibold text-gray-100 flex items-center">
                     <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300">
                         <Image
-                            src={`${process.env.NODE_ENV === 'production' ? '/hamza-portfolio' : ''}${experience.logo}`}
+                            src={experience.logo}
                             alt={experience.name}
                             width={30}
                             height={30}
