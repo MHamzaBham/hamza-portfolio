@@ -11,7 +11,7 @@ export const experiences = [
       "Built full-stack apps with Django, DRF, React.js, and Next.js for seamless APIs and performance.",
     icon: ArrowBigDown,
     logo: "/assets/spectriv.png",
-    tenure: "MAR 2022 - OCT 2022"
+    tenure: "MAR 2022 - PRESENT"
   },
   {
     name: "Ibexoft technologies",
