@@ -41,11 +41,11 @@ export default function SidebarItem({ sidebarItem }: SidebarItemProps) {
       <Link
         href={sidebarItem.link}
         onClick={handleClick}
-        className="flex items-center justify-center p-2 mb-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+        className="flex p-2 mb-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         {sidebarItem.icon}
+        <span className="ml-2">{sidebarItem.name}</span>
       </Link>
-      <TooltipDefault tooltip={sidebarItem.name} />
     </li>
   );
 }
