@@ -75,7 +75,7 @@ function Intro() {
 
 function LetsConnect() {
   return (
-    <a href={Linkedin} target="_blank">
+    <a href={Linkedin} target="_blank" className="inline-block">
       <button
         type="button"
         className="group cursor-pointer mt-4 py-2.5 px-5 me-2 mb-2 text-xs font-medium  focus:outline-none rounded-lg border  focus:z-10  bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"
