@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Sidebar from "@/components/sidebar/Sidebar";
+import "../globals.css";
 
 import "@fontsource/poppins";
 import { Chatbot } from "./ui/chat";
@@ -33,10 +33,7 @@ export default function RootLayout({
       >
         <div className="flex">
           <Sidebar />
-          <main
-            className="flex-1 p-4 bg-cover bg-center min-h-screen"
-          // style={{ backgroundImage: "url('/assets/bg.jpg')" }}
-          >
+          <main className="flex-1 p-4 bg-cover bg-center min-h-screen" >
             {children}
           </main>
         </div>

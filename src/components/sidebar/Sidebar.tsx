@@ -1,10 +1,10 @@
 "use client";
 
-import Logo from "@/app/ui/Logo";
-import SidebarItem from "@/app/ui/SidebarItem";
+import Logo from "@/app/(main)/ui/Logo";
+import SidebarItem from "@/app/(main)/ui/SidebarItem";
 import { menuItems, socialItems } from "@/constants/sidebarMenuItems";
-import SocialMedia from "@/app/ui/SocialMedia";
-import HamburgerMenuButton from "@/app/ui/HamburgerMenuButton";
+import SocialMedia from "@/app/(main)/ui/SocialMedia";
+import HamburgerMenuButton from "@/app/(main)/ui/HamburgerMenuButton";
 import { useState } from "react";
 
 export default function Sidebar() {

@@ -1,4 +1,4 @@
-import Heading from "@/app/ui/Heading";
+import Heading from "@/app/(main)/ui/Heading";
 import List from "./List";
 
 
