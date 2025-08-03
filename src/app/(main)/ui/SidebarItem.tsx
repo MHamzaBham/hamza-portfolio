@@ -13,7 +13,7 @@ interface SidebarItemStructure {
 
 interface SidebarItemProps {
   sidebarItem: SidebarItemStructure;
-  isAdmin: boolean;
+  isAdmin?: boolean;
 }
 
 export default function SidebarItem({ sidebarItem, isAdmin }: SidebarItemProps) {
