@@ -13,9 +13,10 @@ interface SidebarItemStructure {
 
 interface SidebarItemProps {
   sidebarItem: SidebarItemStructure;
+  isAdmin: boolean;
 }
 
-export default function SidebarItem({ sidebarItem }: SidebarItemProps) {
+export default function SidebarItem({ sidebarItem, isAdmin }: SidebarItemProps) {
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === "/";
@@ -44,7 +45,7 @@ export default function SidebarItem({ sidebarItem }: SidebarItemProps) {
         className="flex p-2 mb-3 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
       >
         {sidebarItem.icon}
-        <span className="ml-2">{sidebarItem.name}</span>
+        {isAdmin && <span className="ml-2">{sidebarItem.name}</span>}
       </Link>
     </li>
   );

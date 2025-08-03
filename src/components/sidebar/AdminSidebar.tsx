@@ -43,7 +43,7 @@ function SidebarMenu() {
   return (
     <ul className="space-y-2 font-medium w-full">
       {adminMenuItems.map((item, index) => (
-        <SidebarItem key={`${index}-${item.name}`} sidebarItem={item} />
+        <SidebarItem key={`${index}-${item.name}`} sidebarItem={item} isAdmin={true} />
       ))}
     </ul>
   );
