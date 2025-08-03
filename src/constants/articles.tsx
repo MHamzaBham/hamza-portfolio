@@ -1,3 +1,15 @@
+import {
+  BookOpen,
+  Newspaper,
+  Code2,
+  PenTool,
+  Briefcase,
+  Megaphone,
+  Brain,
+  Rocket,
+  GraduationCap,
+} from "lucide-react";
+
 export interface AuthorType {
   _id: string;
   name: string;
@@ -15,4 +27,17 @@ export interface ArticleType {
   author: AuthorType;
   published: string;
   tags: string[];
+  category: string;
 }
+
+export const categoryIconMap: Record<string, React.ReactNode> = {
+  tech: <BookOpen size={20} />,
+  news: <Newspaper size={20} />,
+  programming: <Code2 size={20} />,
+  design: <PenTool size={20} />,
+  business: <Briefcase size={20} />,
+  marketing: <Megaphone size={20} />,
+  ai: <Brain size={20} />,
+  startup: <Rocket size={20} />,
+  learning: <GraduationCap size={20} />,
+};

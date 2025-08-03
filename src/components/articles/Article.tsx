@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { ArticleType } from "@/constants/articles";
 import Link from "next/link";
+import { categoryIconMap } from "@/constants/articles";
 
 export default function Article({ article }: { article: ArticleType }) {
   return (
@@ -23,7 +24,7 @@ export default function Article({ article }: { article: ArticleType }) {
       <div className="relative flex flex-col h-full">
         <div className="flex items-center justify-between">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-black/5 dark:bg-white/10 group-hover:bg-linear-to-br transition-all duration-300">
-            {/* {article.icon} */}
+            {categoryIconMap[article.category]}
           </div>
           <span
             className={cn(
