@@ -33,7 +33,7 @@ export default function RootLayout({
       >
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 p-4 bg-cover bg-center min-h-screen" >
+          <main className="flex-1 p-4 bg-cover bg-center min-h-screen font-[poppins]" >
             {children}
           </main>
         </div>
