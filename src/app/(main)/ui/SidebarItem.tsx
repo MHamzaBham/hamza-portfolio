@@ -3,12 +3,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import TooltipDefault from "./Tooltip";
+import { twMerge } from "tailwind-merge";
 
 interface SidebarItemStructure {
-    name: string;
-    icon: React.ReactNode;
-    sectionId?: string;
-    link: string;
+  name: string;
+  icon: React.ReactNode;
+  sectionId?: string;
+  link: string;
 }
 
 interface SidebarItemProps {
@@ -16,7 +17,10 @@ interface SidebarItemProps {
   isAdmin?: boolean;
 }
 
-export default function SidebarItem({ sidebarItem, isAdmin }: SidebarItemProps) {
+export default function SidebarItem({
+  sidebarItem,
+  isAdmin,
+}: SidebarItemProps) {
   const pathname = usePathname();
   const router = useRouter();
   const isHomePage = pathname === "/";
@@ -46,6 +50,7 @@ export default function SidebarItem({ sidebarItem, isAdmin }: SidebarItemProps) 
       >
         {sidebarItem.icon}
         {isAdmin && <span className="ml-2">{sidebarItem.name}</span>}
+        {!isAdmin && <TooltipDefault tooltip={sidebarItem.name} />}
       </Link>
     </li>
   );

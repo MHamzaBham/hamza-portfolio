@@ -1,5 +1,6 @@
 import "@fontsource/poppins";
 import { CiLocationArrow1 } from "react-icons/ci";
+import Link from "next/link";
 
 interface HeadingProps {
   section: string;
@@ -21,7 +22,7 @@ export default function Heading({
           {`[ ${section} ]`}
         </h4>
         {button && (
-          <a href={link}>
+          <Link href={link || "#"}>
             <button
               type="button"
               className="group cursor-pointer md:py-2.5 py-2 md:px-5 px-3 md:text-xs text-[10px] font-medium  focus:outline-none rounded-lg  focus:z-10  bg-black/5 dark:bg-white/10 text-gray-300 shadow-gray-600 shadow-sm hover:text-white hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"
@@ -29,7 +30,7 @@ export default function Heading({
               {button}
               <CiLocationArrow1 className="transition-transform duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
-          </a>
+          </Link>
         )}
       </div>
       <div className="my-10">

@@ -18,8 +18,6 @@ export default async function Article({ params }: Props) {
     .get(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
     .then((res) => res.data)
     .catch((err) => {
-      console.log(`${process.env.NEXT_PUBLIC_API_URL}/articles/${slug}`)
-      console.log(err);
       notFound();
     });
 
@@ -27,25 +25,29 @@ export default async function Article({ params }: Props) {
     .get(`${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`)
     .then((res) => res.data)
     .catch((err) => {
-      console.log(`${process.env.NEXT_PUBLIC_API_URL}/authors/${article?.author}`)
-      console.log(err)
-      notFound()
+      notFound();
     });
 
   return (
     <>
       <div className="max-w-4xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto font-[poppins]">
-        <AuthorSection author={author} published={article?.published || ""} />
+        <AuthorSection
+          author={author}
+          published={new Date(article.createdAt || "").toLocaleDateString(
+            undefined,
+            {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            }
+          )}
+        />
 
         <div className="space-y-5 md:space-y-8">
           <div className="space-y-3">
             <h2 className="text-2xl font-bold md:text-3xl dark:text-white">
               {article?.title}
             </h2>
-
-            <p className="text-lg text-gray-800 dark:text-neutral-200">
-              {article?.excerpt}
-            </p>
           </div>
 
           <figure>

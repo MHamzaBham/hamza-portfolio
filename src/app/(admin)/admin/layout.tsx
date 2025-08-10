@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import AdminSidebar from "@/components/sidebar/AdminSidebar";
-import "@/app/globals.css";
+import "../../globals.css";
 
 import "@fontsource/poppins";
+import AdminProvider from "./provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +33,11 @@ export default function RootLayout({
       >
         <div className="flex font-[poppins]">
           <AdminSidebar />
-          <main className="flex-1 p-4 bg-cover bg-center md:mt-0 mt-10 max-w-3xl md:mx-auto mx-2" >
-            {children}
+          <main className="max-w-4xl mx-auto">
+            <AdminProvider>{children}</AdminProvider>
           </main>
         </div>
       </body>
     </html>
   );
 }
-

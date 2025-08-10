@@ -1,12 +1,22 @@
 import { cn } from "@/lib/utils";
 import type { ArticleType } from "@/constants/articles";
 import Link from "next/link";
-import { categoryIconMap } from "@/constants/articles";
+import { categoryMap } from "@/constants/articles";
 
-export default function Article({ article }: { article: ArticleType }) {
+export default function Article({
+  article,
+  isAdmin = false,
+}: {
+  article: ArticleType;
+  isAdmin?: boolean;
+}) {
   return (
     <Link
-      href={`/articles/${article._id}`}
+      href={
+        isAdmin
+          ? `/admin/articles/${article._id}/edit`
+          : `/articles/${article._id}`
+      }
       className={cn(
         "group relative p-4 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer",
         "border border-gray-100/80 dark:border-white/10 bg-white dark:bg-black",
@@ -24,7 +34,7 @@ export default function Article({ article }: { article: ArticleType }) {
       <div className="relative flex flex-col h-full">
         <div className="flex items-center justify-between">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-black/5 dark:bg-white/10 group-hover:bg-linear-to-br transition-all duration-300">
-            {categoryIconMap[article.category]}
+            {categoryMap[article.category]?.icon}
           </div>
           <span
             className={cn(
@@ -32,7 +42,11 @@ export default function Article({ article }: { article: ArticleType }) {
               "bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300"
             )}
           >
-            {article.published || "NA"}
+            {new Date(article.createdAt || "").toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
           </span>
         </div>
 
