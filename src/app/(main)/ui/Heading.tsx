@@ -18,9 +18,9 @@ export default function Heading({
   return (
     <div className="font-[poppins]">
       <div className="flex justify-between items-center">
-        <h4 className="text-sm text-gray-400 font-extralight tracking-tight">
+        <span className="text-sm text-gray-400 font-extralight tracking-tight">
           {`[ ${section} ]`}
-        </h4>
+        </span>
         {button && (
           <Link href={link || "#"}>
             <button
@@ -34,7 +34,7 @@ export default function Heading({
         )}
       </div>
       <div className="my-10">
-        <h1 className="text-4xl font-[poppins] font-semibold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-white/90 to-rose-200">
+        <h1 className="font-[poppins] font-semibold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-white/90 to-rose-200">
           {title}
         </h1>
       </div>

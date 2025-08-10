@@ -2,62 +2,70 @@ import React from "react";
 import { ArrowDown } from "lucide-react"; // Replace with the correct import for your `ArrowDown` icon
 import Image from "next/image";
 
-
-
 type Experience = {
-    name: string;
-    role: string;
-    description: string;
-    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-    logo: string;
-    tenure: string;
+  name: string;
+  role: string;
+  description: string;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  logo: string;
+  tenure: string;
 };
 
 type ExperienceProps = {
-    experience: Experience;
-    index: number;
-    experienceLength: number;
+  experience: Experience;
+  index: number;
+  experienceLength: number;
 };
 
-const Experience: React.FC<ExperienceProps> = ({ experience, index, experienceLength }) => {
-    return (
-        <div key={experience.name} className="relative flex flex-col items-center">
-            {/* Feature Block */}
-            <div className={`relative pl-16 ${index % 2 !== 0 ? "md:mt-20" : "md:-mt-20"}`}>
-                <dt className="text-base/7 font-semibold text-gray-100 flex items-center">
-                    <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300">
-                        <Image
-                            src={experience.logo}
-                            alt={experience.name}
-                            width={30}
-                            height={30}
-                            className="rounded-xl opacity-80"
-                        />
-                    </div>
-                    <div>
-                    <h2 className="text-lg font-[poppins]">{experience.role}</h2>
-                    <h4 className="text-xs font-[poppins] text-gray-500 font-extralight tracking-tight">
-                        {experience.tenure}
-                    </h4>
-                    </div>
-                </dt>
-                <p className="text-gray-400 text-md mt-3">{experience.description}</p>
-            </div>
+const Experience: React.FC<ExperienceProps> = ({
+  experience,
+  index,
+  experienceLength,
+}) => {
+  return (
+    <div key={experience.name} className="relative flex flex-col items-center">
+      {/* Feature Block */}
+      <div
+        className={`relative pl-16 ${
+          index % 2 !== 0 ? "md:mt-20" : "md:-mt-20"
+        }`}
+      >
+        <dt className="text-base/7 font-semibold text-gray-100 flex items-center">
+          <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-black/5 dark:bg-white/10 text-gray-600 dark:text-gray-300">
+            <Image
+              src={experience.logo}
+              alt={experience.name}
+              width={30}
+              height={30}
+              className="rounded-xl opacity-80"
+            />
+          </div>
+          <div>
+            <p className="text-lg font-[poppins]">{experience.role}</p>
+            <span className="text-xs font-[poppins] text-gray-500 font-semibold tracking-tight">
+              {experience.tenure}
+            </span>
+          </div>
+        </dt>
+        <p className="text-gray-400 text-md mt-3">{experience.description}</p>
+      </div>
 
-            {/* Transition Arrow */}
-            {index < experienceLength - 1 && (
-                <div
-                    className={`hidden md:flex w-full ${index % 2 === 0 ? "justify-end" : "justify-start"
-                        }`}
-                >
-                    <ArrowDown
-                        className={`size-6 text-indigo-400 animate-bounce ${index % 2 === 0 ? "rotate-135" : "-rotate-135"
-                            }`}
-                    />
-                </div>
-            )}
+      {/* Transition Arrow */}
+      {index < experienceLength - 1 && (
+        <div
+          className={`hidden md:flex w-full ${
+            index % 2 === 0 ? "justify-end" : "justify-start"
+          }`}
+        >
+          <ArrowDown
+            className={`size-6 text-indigo-400 animate-bounce ${
+              index % 2 === 0 ? "rotate-135" : "-rotate-135"
+            }`}
+          />
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default Experience;

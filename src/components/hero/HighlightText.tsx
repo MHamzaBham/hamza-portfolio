@@ -3,12 +3,10 @@ import { motion } from "framer-motion";
 import "@fontsource/poppins";
 import { CiLocationArrow1 } from "react-icons/ci";
 
-const Linkedin = "https://www.linkedin.com/in/hamzabham/"
+const Linkedin = "https://www.linkedin.com/in/hamzabham/";
 
 export default function Text() {
-  return (
-    <Heading />
-  );
+  return <Heading />;
 }
 
 export function Ticker() {
@@ -39,7 +37,7 @@ function Heading() {
       transition={{ duration: 1 }}
       className="font-[poppins] text-5xl leading-tight text-[white] font-bold"
     >
-      <h1 className="text-4xl sm:text-6xl md:text-6xl font-bold mb-4 tracking-tight">
+      <h4 className="text-4xl! md:text-6xl! font-bold mb-4 tracking-tight">
         <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-white/80">
           Hi, My name is
         </span>
@@ -47,7 +45,7 @@ function Heading() {
         <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-white/90 to-rose-300 __className_5f64cf">
           Hamza Ahmed.
         </span>
-      </h1>
+      </h4>
       <Intro />
       <LetsConnect />
     </motion.div>
@@ -62,11 +60,11 @@ function Intro() {
       transition={{ duration: 1 }}
       className="md:text-lg text-sm font-light mt-2"
     >
-      I specialize in building fast, dynamic, and scalable
-      web applications using modern technologies like <i>React</i>,{" "}
-      <i>Node.js</i>,<i> Django</i> and <i>SQL</i>. Lately, I’ve been diving
-      into <span className="font-bold"> AI integrations </span> to create
-      smarter, more efficient solutions. Always eager to{" "}
+      I specialize in building fast, dynamic, and scalable web applications
+      using modern technologies like <i>React</i>, <i>Node.js</i>,<i> Django</i>{" "}
+      and <i>SQL</i>. Lately, I’ve been diving into{" "}
+      <span className="font-bold"> AI integrations </span> to create smarter,
+      more efficient solutions. Always eager to{" "}
       <span className="font-bold"> learn and innovate </span>, I’m ready to
       bring ideas to life with clean, high-performance code.
     </motion.p>
@@ -96,15 +94,16 @@ export function ScrollDownArrow() {
   };
 
   return (
-    <div
-      className="flex justify-center mt-10"
-      onClick={handleScroll}
-    >
+    <div className="flex justify-center mt-10" onClick={handleScroll}>
       <motion.img
         src="/assets/arrow.svg"
         alt="Scroll Down"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 , transition: { duration: 2, repeat: Infinity, repeatType: "reverse" } }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 2, repeat: Infinity, repeatType: "reverse" },
+        }}
         className="w-14 h-14 cursor-pointer rotate-180"
       />
     </div>
