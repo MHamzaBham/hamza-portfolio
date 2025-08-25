@@ -3,13 +3,7 @@ import type { ArticleType } from "@/constants/articles";
 import Link from "next/link";
 import { categoryMap } from "@/constants/articles";
 
-export default function Article({
-  article,
-  isAdmin = false,
-}: {
-  article: ArticleType;
-  isAdmin?: boolean;
-}) {
+export default function Article({ article, isAdmin = false }: ArticleProps) {
   return (
     <Link
       href={
@@ -79,4 +73,9 @@ export default function Article({
       <div className="absolute inset-0 -z-10 rounded-xl p-px bg-linear-to-br from-transparent via-gray-100/50 to-transparent dark:via-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
     </Link>
   );
+}
+
+interface ArticleProps {
+  article: ArticleType;
+  isAdmin?: boolean;
 }

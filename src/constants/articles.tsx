@@ -7,6 +7,8 @@ import {
   Megaphone,
   Brain,
   Rocket,
+  Cpu,
+  LaptopMinimal,
 } from "lucide-react";
 
 export interface AuthorType {
@@ -55,7 +57,7 @@ export const categoryMap: Record<string, CategoryMapProps> = {
   tech: {
     id: "tech",
     name: "Tech",
-    icon: <BookOpen size={20} />,
+    icon: <LaptopMinimal  size={20} />,
   },
   news: {
     id: "news",

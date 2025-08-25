@@ -52,7 +52,7 @@ export default async function Article({ params }: Props) {
 
           <figure>
             <img
-              className="w-full object-cover rounded-xl h-72"
+              className="w-full object-cover rounded-xl"
               src={article?.featured_image}
               alt={article?.title}
             />
