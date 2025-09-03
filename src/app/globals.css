@@ -69,3 +69,8 @@ h6 {
   font-size: 0.75rem;
   font-weight: 600;
 }
+
+.subtle-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #111827;
+}

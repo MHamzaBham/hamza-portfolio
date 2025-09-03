@@ -55,7 +55,9 @@ const ContentInput = ({ content, setContent }: ContentInputProps) => {
   return (
     <div>
       {editor && <Toolbar editor={editor} />}
-      <EditorContent editor={editor} />
+      <div className="max-h-[600px] overflow-y-auto subtle-scrollbar">
+        <EditorContent editor={editor} />
+      </div>
     </div>
   );
 };

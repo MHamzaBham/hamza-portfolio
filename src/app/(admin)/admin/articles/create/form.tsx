@@ -91,7 +91,7 @@ function Form() {
   };
 
   return (
-    <div className="mt-10 max-w-3xl">
+    <div className="mt-10 md:w-3xl w-full p-5">
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <TextInput
           label="Title"
