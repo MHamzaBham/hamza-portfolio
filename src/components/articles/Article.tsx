@@ -13,7 +13,7 @@ export default function Article({ article, isAdmin = false }: ArticleProps) {
       }
       className={cn(
         "group relative p-4 rounded-xl overflow-hidden transition-all duration-300 cursor-pointer",
-        "border border-gray-100/80 dark:border-white/10 bg-white dark:bg-black",
+        "border border-gray-100/80 dark:border-white/10 bg-white/20 dark:bg-black",
         "hover:shadow-[0_2px_12px_rgba(0,0,0,0.03)] dark:hover:shadow-[0_2px_12px_rgba(255,255,255,0.03)]",
         "hover:-translate-y-0.5 will-change-transform",
         "md:col-span-1 col-span-1"

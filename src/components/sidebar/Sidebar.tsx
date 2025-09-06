@@ -17,9 +17,9 @@ export default function Sidebar() {
       )}
       <aside
         id="logo-sidebar"
-        className={`fixed top-0 left-0 z-40 w-16 h-screen transition-transform -translate-x-full ${
+        className={`dark:bg-[#121212] bg-[#f4f4f4] fixed top-0 left-0 z-40 w-16 h-screen transition-transform -translate-x-full  ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:translate-x-0 shadow-md shadow-gray-700 overflow-x-visible`}
+        } lg:translate-x-0 shadow-md dark:shadow-gray-700 shadow-gray-300 overflow-x-visible`}
         aria-label="Sidebar"
       >
         <div>
@@ -27,11 +27,11 @@ export default function Sidebar() {
               <HamburgerMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
           )}
         </div>
-        <div className="h-full px-3 py-4 bg-[#121212] flex flex-col items-center">
+        <div className="h-full px-3 py-4 flex flex-col items-center">
           {/* Logo */}
           <Logo />
           <SidebarMenu />
-          <div className="py-5 mt-5 border-t border-gray-700 w-full">
+          <div className="py-5 mt-5 border-t dark:border-gray-700 border-gray-300 w-full">
             {/* Social Media Icons */}
             <SocialMenu />
           </div>

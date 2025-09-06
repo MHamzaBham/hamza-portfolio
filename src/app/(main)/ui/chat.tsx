@@ -6,6 +6,7 @@ import { BsStars } from "react-icons/bs";
 import { FaRegUser } from "react-icons/fa";
 import { FiMessageCircle } from "react-icons/fi";
 import ChatSkeleton from "./skeleton";
+import { X } from "lucide-react";
 
 interface Message {
   user: boolean;
@@ -241,14 +242,14 @@ interface ChatBtnProps {
 function FloatingChatBtn({ isOpen, setIsOpen }: ChatBtnProps) {
   return (
     <button
-      className="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center text-sm font-medium border rounded-full w-10 h-10 bg-black hover:bg-gray-700 cursor-pointer border-gray-200 text-white"
+      className="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center text-sm font-medium border rounded-full w-10 h-10 bg-white/60 dark:bg-black hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer border-gray-200 text-neutral-600  dark:text-white"
       type="button"
       onClick={() => setIsOpen(!isOpen)}
       aria-haspopup="dialog"
       aria-expanded={isOpen}
     >
-      <div className="absolute z-10 top-1 left-1 w-8 h-8 rounded-full bg-[#6e6e6e] animate-ping"></div>
-      <FiMessageCircle className="h-5 w-5" />
+      <div className="absolute z-10 top-1 left-1 w-8 h-8 rounded-full dark:bg-[#6e6e6e] bg-gray-300 animate-ping"></div>
+      {isOpen ? <X className="h-5 w-5" /> : <FiMessageCircle className="h-5 w-5" />}
     </button>
   );
 }

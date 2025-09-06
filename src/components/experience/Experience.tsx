@@ -41,13 +41,13 @@ const Experience: React.FC<ExperienceProps> = ({
             />
           </div>
           <div>
-            <p className="text-lg font-[poppins]">{experience.role}</p>
+            <p className="text-lg font-[poppins] dark:text-gray-100 text-neutral-800">{experience.role}</p>
             <span className="text-xs font-[poppins] text-gray-500 font-semibold tracking-tight">
               {experience.tenure}
             </span>
           </div>
         </dt>
-        <p className="text-gray-400 text-md mt-3">{experience.description}</p>
+        <p className="text-gray-600 dark:text-gray-400 text-md mt-3">{experience.description}</p>
       </div>
 
       {/* Transition Arrow */}

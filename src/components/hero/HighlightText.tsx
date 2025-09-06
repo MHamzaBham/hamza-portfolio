@@ -35,14 +35,14 @@ function Heading() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="font-[poppins] text-5xl leading-tight text-[white] font-bold"
+      className="font-[poppins] text-5xl leading-tight font-bold text-neutral-600 dark:text-white"
     >
       <h4 className="text-4xl! md:text-6xl! font-bold mb-4 tracking-tight">
-        <span className="bg-clip-text text-transparent bg-linear-to-b from-white to-white/80">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-800 to-neutral-800 dark:from-white dark:to-white/80">
           Hi, My name is
         </span>
         <br />
-        <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-white/90 to-rose-300 __className_5f64cf">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-900 via-indigo-900 to-indigo-900 dark:from-indigo-300 dark:via-white/90 dark:to-rose-300">
           Hamza Ahmed.
         </span>
       </h4>
@@ -58,7 +58,7 @@ function Intro() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="md:text-lg text-sm font-light mt-2"
+      className="md:text-lg text-sm font-light mt-2 text-neutral-700 dark:text-neutral-200"
     >
       I specialize in building fast, dynamic, and scalable web applications
       using modern technologies like <i>React</i>, <i>Node.js</i>,<i> Django</i>{" "}
@@ -76,7 +76,7 @@ function LetsConnect() {
     <a href={Linkedin} target="_blank" className="inline-block">
       <button
         type="button"
-        className="group cursor-pointer mt-4 py-2.5 px-5 me-2 mb-2 text-xs font-medium  focus:outline-none rounded-lg border  focus:z-10  bg-gray-800 text-gray-400 border-gray-600 hover:text-white hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"
+        className="group cursor-pointer mt-4 py-2.5 px-5 me-2 mb-2 text-xs font-medium focus:outline-none rounded-lg border focus:z-10 bg-neutral-100 text-neutral-600 border-neutral-300 hover:text-neutral-900 hover:bg-neutral-200  dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"
       >
         Let's Connect
         <CiLocationArrow1 className="transition-transform duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />

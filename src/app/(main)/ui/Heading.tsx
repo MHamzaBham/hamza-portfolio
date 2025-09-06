@@ -25,7 +25,7 @@ export default function Heading({
           <Link href={link || "#"}>
             <button
               type="button"
-              className="group cursor-pointer md:py-2.5 py-2 md:px-5 px-3 md:text-xs text-[10px] font-medium  focus:outline-none rounded-lg  focus:z-10  bg-black/5 dark:bg-white/10 text-gray-300 shadow-gray-600 shadow-sm hover:text-white hover:bg-gray-700 flex items-center gap-2 transition-all duration-300"
+              className="group cursor-pointer md:py-2.5 py-2 md:px-5 px-3 md:text-xs text-[10px] font-medium focus:outline-none rounded-lg focus:z-10 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 shadow-gray-200 dark:shadow-gray-800 shadow-sm  flex items-center gap-2 transition-all duration-300"
             >
               {button}
               <CiLocationArrow1 className="transition-transform duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -34,7 +34,7 @@ export default function Heading({
         )}
       </div>
       <div className="my-10">
-        <h1 className="font-[poppins] font-semibold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-white/90 to-rose-200">
+        <h1 className="font-[poppins] font-semibold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-800 via-black/90 to-indigo-200 dark:from-indigo-300 dark:via-white/90 dark:to-rose-200">
           {title}
         </h1>
       </div>
